@@ -27,11 +27,15 @@ export class Octo{
   }
 
   load=async()=>{
-    const {_res,decode} = this
+
+    const {_res,decode,isImg,file} = this
     const res = await _res()
     if(!res)return void 0;
-    //const url =res.data.download_url;
-    //console.log(url)
+    if(isImg(file)){
+      return res.data.download_url;
+      //const url = res.data.download_url;
+      //console.log(url)      
+    }
     //return fetch(url,{cache:'no-cache'}).then(d=>d.text())
     return decode(res.data.content)
   }
@@ -91,6 +95,11 @@ var url2="https://hashsan.github.io/use/sample/use.js"
     return {baseurl,file}
   }
 
+  isImg(d){
+    const re=/.(jpg|jpeg|png|gif|bmp|svg|webp)$/i
+    return re.test(d)
+  }
+  
   isText(d){
     return /\.txt$/.test(d)
   }
