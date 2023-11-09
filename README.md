@@ -2,10 +2,12 @@
 Octokit Wrapping by Octo
 
 ```js
-import {Octo} from "..."
-let url ='https://***.github.io/xyz/test.txt'
-let token = 'ghp_***************************'
-const api = new Octo(url,token)
+import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
+
+  const url = '//hashsan.github.io/outputs/test2.txt'
+  const token = 'ghp_*******************************'
+  const api = new Octo(url,token)
+
 ```
 ## api the less
 
@@ -18,24 +20,28 @@ const api = new Octo(url,token)
 ## more usage
 ```js
 //<div><button id="api">don</button></div>
-document.getElementById('api')
-  .onclick = main
+import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
+
+
+document.getElementById('api').onclick = main
+
 
 async function main(){
 
-  const url ='//hashsan.github.io/outputs/test2.txt'
-  const token =localStorage.ghp
+
+  const url = '//hashsan.github.io/outputs/test2.txt'
+  const token = localStorage.ghp
   const api = new Octo(url,token)
 
 
-  api.auth().then(d=>{
+  await api.auth().then(d=>{
     const img = new Image()
     img.src = d
     document.body.append(img)
   })
 
 
-  api.load().then(d=>{
+  await api.load().then(d=>{
     const el = document.createElement('div')
     el.innerText = d
     document.body.append(el)
@@ -43,17 +49,20 @@ async function main(){
 
 
   const data = 'これはテストよ。' + new Date().toString() 
-  api.save(data).then(d=>{
+  await api.save(data).then(d=>{
     const el = document.createElement('div')
     el.innerText = !!d
-    console.log(d)
     document.body.append(el)  
+
+    console.log(d)    
   })
+
 
 }
 
 ```
 
 ## 
+https://codepen.io/pinkromeo/pen/xxMqNqE?editors=1010
 https://qiita.com/i15fujimura1s/items/6fa5d16b1e53f04f3b06
 
