@@ -70,13 +70,12 @@ async function main(){
 
 
 ## Saver and Saver_local(file) Saver_github(file,token) //file is url in repo
----
+```
+import {Octo,Saver_local,Saver_github} from "https://hashsan.github.io/Octo/Octo.js";
+
 var saver = new Saver_github(file,localStorage.ghp)
 ed.setData(await saver.load())
-
----
-
-
+```
 
 ## labo
 ## jpg
