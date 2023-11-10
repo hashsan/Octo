@@ -1,4 +1,4 @@
-# Octo
+# Octo and Saver
 Octokit Wrapping by Octo
 ```
 import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
@@ -67,6 +67,16 @@ async function main(){
 ## 
 - https://codepen.io/pinkromeo/pen/xxMqNqE?editors=1010
 - https://qiita.com/i15fujimura1s/items/6fa5d16b1e53f04f3b06
+
+
+## Saver and Saver_local(file) Saver_github(file,token) //file is url in repo
+---
+var saver = new Saver_github(file,localStorage.ghp)
+ed.setData(await saver.load())
+
+---
+
+
 
 ## labo
 ## jpg
