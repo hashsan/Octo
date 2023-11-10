@@ -1,3 +1,7 @@
+/*
+Octo and Saver
+*/
+
 import { Octokit } from "https://esm.sh/@octokit/core";
 
 export class Octo{
@@ -132,3 +136,58 @@ var url2="https://hashsan.github.io/use/sample/use.js"
 
   /////
 }
+
+
+
+export class Saver{
+  constructor(file){
+    if(!file){
+      throw new Error('need file name');
+    }
+    this.file = file
+  }
+  save(){
+    
+  }
+  load(){
+    
+  }  
+}
+///
+export class Saver_local extends Saver{
+  constructor(file){
+    super(file)    
+  }
+  save(data){
+    const key = this.file
+    localStorage[key]=data
+  }
+  load(){
+    const key = this.file    
+    return localStorage[key]
+  }
+}
+//
+export class Saver_github extends Saver{
+  constructor(file,token){
+    super(file)
+    //console.log('file mean url')
+    if(!token){
+      throw new Error('need token')
+    }
+    this.api = new Octo(file,token)
+    this.api.auth().then(d=>{      
+      if(!d){
+       throw new Error('token limit? or url unmatch') 
+      }      
+    })
+  }
+  async save(data){
+    await this.api.save(data)
+  }
+  async load(){
+    return await this.api.load()
+  }    
+}
+
+
