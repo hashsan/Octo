@@ -68,9 +68,12 @@ async function main(){
 
 ```
 
-## 
+## exsample
+- octo
 - https://codepen.io/pinkromeo/pen/xxMqNqE?editors=1010
-- https://qiita.com/i15fujimura1s/items/6fa5d16b1e53f04f3b06
+- https://qiita.com/i15fujimura1s/items/6fa5d16b1e53f04f3b06 
+- saver
+- https://codepen.io/pinkromeo/pen/oNmWGBY
 
 
 ## Saver and Saver_local(file) Saver_github(file,token) //file is url in repo
