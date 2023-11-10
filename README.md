@@ -1,6 +1,8 @@
 # Octo
 Octokit Wrapping by Octo
-
+```
+import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
+```
 ```js
 import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
 
