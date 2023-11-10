@@ -3,6 +3,10 @@ Octokit Wrapping by Octo
 ```
 import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
 ```
+```
+import {Octo,Saver_local,Saver_github} from "https://hashsan.github.io/Octo/Octo.js";
+```
+
 ```js
 import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
 
