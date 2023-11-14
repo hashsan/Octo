@@ -41,7 +41,7 @@ async function editorU(){
   console.log('boot editorU',ed,url)
   ed.innerText = await api.load()
   
-  const {Bar} = await import('https://hashsan.github.io/Bar/Bar.js')
+  const {Bar} = await import('https://hashsan.github.io/Bar/Bar.js?v=2')
   var bar = new Bar()
   ed.addEventListener('keydown',async(e)=>{
     if(e.ctrlKey && e.which===83){
