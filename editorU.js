@@ -46,10 +46,11 @@ async function editorU(){
   ed.addEventListener('keydown',async(e)=>{
     if(e.ctrlKey && e.which===83){
       e.preventDefault()
+      bar.go(30)     
       await api.save(ed.innerText)
       bar.go(100)
     }
-    bar.go(20)
+    bar.go(10)
   })
 }
 
