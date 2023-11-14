@@ -1,5 +1,9 @@
-# Octo and Saver
+# Octo and Saver and editorU
 Octokit Wrapping by Octo
+
+```
+import "https://hashsan.github.io/Octo/editorU.js";
+```
 ```
 import {Octo} from "https://hashsan.github.io/Octo/Octo.js";
 ```
