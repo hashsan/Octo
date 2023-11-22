@@ -13,6 +13,7 @@ export class Octo{
       throw new Error('file nothing?')
       //console.log('file nothing ?',file)
     }
+    this.url = url /////
     this.file = file
     this.baseurl = baseurl
   }
@@ -66,6 +67,39 @@ export class Octo{
     if(res) return res.data.sha
     return void 0;
   }
+
+
+  ////
+  summary=async()=>{
+
+  const {api,url} = this
+  const {owner,repo,path} = this.urlEnv(url)
+
+  const res = await api.request('GET /repos/{owner}/{repo}/commits', {
+    owner,
+    repo,
+    path, 
+    per_page: 1,
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+  })
+    
+  //fn.q('pre').innerHTML = JSON.stringify(res,null,'\n')
+  if(!res){
+    return console.log('summary null!')
+  }
+
+  const data = res.data.at(0)
+  //console.log(data)
+  const {sha} = data
+  const {date} = data.commit.committer
+  const {message} =data.commit
+    
+  return {sha,date,message,path}
+}
+
+  ////
 
   /////
   urlEnv(url){
