@@ -95,8 +95,10 @@ export class Octo{
   const {sha} = data
   const {date} = data.commit.committer
   const {message} =data.commit
+  const order = ~~( new Date(date).getTime()/(60*1000) )
+
     
-  return {sha,date,message,path}
+  return {sha,date,message,path,order}
 }
 
   ////
