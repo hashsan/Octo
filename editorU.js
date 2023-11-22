@@ -49,6 +49,7 @@ async function editorU(){
       bar.go(30)     
       await api.save(ed.innerText)
       bar.go(100)
+      return //
     }
     bar.go(10)
   })
