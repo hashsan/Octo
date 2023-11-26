@@ -162,6 +162,10 @@ function base64Encode(...parts) {
 }  
 
 
+/*
+v1 bugfix [] is empty
+*/
+
 export class Octo{
   owner
   repo
@@ -253,7 +257,11 @@ export class Octo{
     ;
     if(!res){
       return 
-    }    
+    }
+    //v1 return []
+    if(!rea.data[0]){
+      return 
+    }
     return res.data[0].sha
   }
 
@@ -266,6 +274,9 @@ export class Octo{
       return console.log('summary null!')
     }
     const data = res.data.at(0)
+    if(!data){
+      return console.log('summary null!')      
+    }
     //console.log(data)
     const {sha} = data
     const {date} = data.commit.committer
