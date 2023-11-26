@@ -259,7 +259,7 @@ export class Octo{
       return 
     }
     //v1 return []
-    if(!rea.data[0]){
+    if(!res.data[0]){
       return 
     }
     return res.data[0].sha
