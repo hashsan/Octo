@@ -164,6 +164,7 @@ function base64Encode(...parts) {
 
 /*
 v1 bugfix [] is empty
+v2 commit sha is old
 */
 
 export class Octo{
@@ -250,6 +251,19 @@ export class Octo{
     return avatar_url
   }
 
+  //v2
+  sha=async()=>{    
+    const res =await this.octokit
+    .request('GET ' + this.pass.load_url)
+    .catch(d=>void 0)
+    ;
+    if(!res){
+      return 
+    }
+    return res.data.sha
+  }
+  
+  /*
   sha=async()=>{
     const res =await this.octokit
     .request('GET ' + this.pass.summary_url)
@@ -263,7 +277,7 @@ export class Octo{
       return 
     }
     return res.data[0].sha
-  }
+  }*/
 
   summary=async()=>{
     const res =await this.octokit
