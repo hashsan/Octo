@@ -1,3 +1,6 @@
+/*
+v2 missing def_url 
+*/
 import {Octokit} from "https://esm.sh/@octokit/core"
 
 
@@ -15,15 +18,16 @@ export class GitPass{
   repos_url //ok
 
   constructor(obj){
-    this.def_url ="https://hashsan.github.io/outputs/cache.txt"    
+    const def_url = "https://hashsan.github.io/outputs/cache.txt"     
+    this.def_url = def_url;
     if(!obj){
       console.log('set def_url',def_url)
       const u = def_url
-      return new GitPass(this.urlparse(def_url))
+      return new GitPass(this.urlparse(u))
     }
     if(this.isString(obj)){
       const u = this.isGithub(obj)?obj:def_url;
-      return new GitPass(this.urlparse(obj))
+      return new GitPass(this.urlparse(u))
     }
 
     const {owner,repo,path} = obj;
